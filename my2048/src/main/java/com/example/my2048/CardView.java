@@ -56,7 +56,7 @@ public class CardView extends FrameLayout {
         addView(card,params);
 
     }
-
+//safaf
 
     public void setNum(int num) {
         this.num = num;

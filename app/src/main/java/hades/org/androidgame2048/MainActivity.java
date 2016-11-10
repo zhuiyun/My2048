@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
                         score_tv.setText(score+"");
                     }
                     break;
+
             }
         }
     };
