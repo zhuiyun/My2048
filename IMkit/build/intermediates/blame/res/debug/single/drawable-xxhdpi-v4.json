@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_ic_warning.png",
+        "source": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\src\\main\\res\\drawable-xxhdpi\\rc_ic_warning.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_default_portrait.png",
+        "source": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\src\\main\\res\\drawable-xxhdpi\\rc_default_portrait.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_ic_bubble_white.9.png",
+        "source": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\src\\main\\res\\drawable-xxhdpi\\rc_ic_bubble_white.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\rc_group_default_portrait.png",
+        "source": "D:\\AndroidStudioProjects\\MyApplication11\\IMkit\\src\\main\\res\\drawable-xxhdpi\\rc_group_default_portrait.png"
+    }
+]

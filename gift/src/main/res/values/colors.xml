@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#e1e1e1</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBestGiftClassic">#ED1B36</color>
+    <!--搜索栏-->
+    <color name="category_search_background">#ededed</color>
+
+    <color name="category_search_textColor">#9B9B9B</color>
+    <!--分类-单品-->
+    <color name="single_left_divider">#ededed</color>
+</resources>

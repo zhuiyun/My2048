@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/homepage_rootview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_view_height"
+        android:background="#ED1B36"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/logo_title"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/homepage_search_tv"
+            android:layout_width="260dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/shape"
+            android:drawableLeft="@mipmap/icon_search_grey"
+            android:drawablePadding="5dp"
+            android:padding="3dp"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/btn_signin" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/homepage_tb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:tabTextColor="#000000"
+            app:tabIndicatorColor="#ED2D44"
+            app:tabSelectedTextColor="#ED2D44" />
+
+        <ImageView
+            android:id="@+id/homepage_downIv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:src="@mipmap/icon_btn_arrow_down" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/homepage_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

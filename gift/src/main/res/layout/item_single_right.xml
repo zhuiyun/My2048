@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="80dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:id="@+id/item_single_right_ll"
+        android:gravity="center">
+        <View
+            style="@style/single_right_view"
+            />
+    <TextView
+        android:id="@+id/item_right_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="111"/>
+        <View
+            style="@style/single_right_view" />
+    </LinearLayout>
+    <com.gaowenyun.gift.view.NoScrollGridView
+        android:id="@+id/item_right_gv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        />
+
+</LinearLayout>

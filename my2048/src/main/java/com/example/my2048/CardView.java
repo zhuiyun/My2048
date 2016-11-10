@@ -1,0 +1,119 @@
+package com.example.my2048;
+
+
+//                            _ooOoo_  
+//                           o8888888o  
+//                           88" . "88  
+//                           (| -_- |)  
+//                            O\ = /O  
+//                        ____/`---'\____  
+//                      .   ' \\| |// `.  
+//                       / \\||| : |||// \  
+//                     / _||||| -:- |||||- \  
+//                       | | \\\ - /// | |  
+//                     | \_| ''\---/'' | |  
+//                      \ .-\__ `-` ___/-. /  
+//                   ___`. .' /--.--\ `. . __  
+//                ."" '< `.___\_<|>_/___.' >'"".  
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |  
+//                 \ \ `-. \_ __\ /__ _/ .-` / /  
+//         ======`-.____`-.___\_____/___.-`____.-'======  
+//                            `=---='  
+//  
+//         .............................................  
+//                  佛祖镇楼                  BUG辟易  
+//          佛曰:  
+//                  写字楼里写字间，写字间里程序员；  
+//                  程序人员写程序，又拿程序换酒钱。  
+//                  酒醒只在网上坐，酒醉还来网下眠；  
+//                  酒醉酒醒日复日，网上网下年复年。  
+//                  但愿老死电脑间，不愿鞠躬老板前；  
+//                  奔驰宝马贵者趣，公交自行程序员。  
+//                  别人笑我忒疯癫，我笑自己命太贱；  
+//                  不见满街漂亮妹，哪个归得程序员？  
+
+
+import android.content.Context;
+import android.view.Gravity;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+/**
+ * Created by Administrator on 2016/11/10 0010.
+ */
+public class CardView extends FrameLayout {
+    TextView card;
+    int num;
+
+    public CardView(Context context) {
+        super(context);
+        FrameLayout.LayoutParams params = new LayoutParams(-1, -1);
+        params.setMargins(10, 10, 0, 0);
+        card = new TextView(getContext());
+        card.setTextSize(30);
+        card.setGravity(Gravity.CENTER);
+        setNum(0);
+        addView(card,params);
+
+    }
+
+
+    public void setNum(int num) {
+        this.num = num;
+        if (num == 0) {
+            card.setText("");
+        } else {
+            card.setText(num + "");
+        }
+        switch (num) {
+            case 0:
+                card.setBackgroundColor(0x33ffffff);
+                break;
+            case 2:
+                card.setBackgroundColor(0xffeee4da);
+                break;
+            case 4:
+                card.setBackgroundColor(0xffede0c8);
+                break;
+            case 8:
+                card.setBackgroundColor(0xfff2b179);
+                break;
+            case 16:
+                card.setBackgroundColor(0xfff59563);
+                break;
+            case 32:
+                card.setBackgroundColor(0xfff67c5f);
+                break;
+            case 64:
+                card.setBackgroundColor(0xfff65e3b);
+                break;
+            case 128:
+                card.setBackgroundColor(0xffedcf72);
+                break;
+            case 256:
+                card.setBackgroundColor(0xffedcc61);
+                break;
+            case 512:
+                card.setBackgroundColor(0xffedc850);
+                break;
+            case 1024:
+                card.setBackgroundColor(0xffedc53f);
+                break;
+            case 2048:
+                card.setBackgroundColor(0xffedc22e);
+                break;
+            default:
+                card.setBackgroundColor(0x33ffffff);
+                break;
+        }
+    }
+
+
+    public int getNum() {
+        return num;
+    }
+
+    public boolean equals(CardView card){
+        return card.getNum()==getNum();
+    }
+}

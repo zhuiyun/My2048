@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/strategy_relative_height">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="栏目"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/check_all_colomn_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:drawableRight="@mipmap/mq_arrow_right"
+                android:gravity="center"
+                android:text="查看全部"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/colomn_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/check_all_colomn_tv" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#eaeaea" />
+
+        <RelativeLayout style="@style/reletiveLayout_strategy">
+
+            <TextView
+                android:id="@+id/strategy_category_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="品类"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/check_all_category_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:drawableRight="@mipmap/mq_arrow_right"
+                android:gravity="center"
+                android:text="查看全部"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/category_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/check_all_category_tv" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#eaeaea" />
+        <RelativeLayout style="@style/reletiveLayout_strategy">
+
+            <TextView
+                android:id="@+id/strategy_style_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="风格"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/check_all_style_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:drawableRight="@mipmap/mq_arrow_right"
+                android:gravity="center"
+                android:text="查看全部"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/style_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/check_all_style_tv" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#eaeaea" />
+        <RelativeLayout style="@style/reletiveLayout_strategy">
+
+            <TextView
+                android:id="@+id/strategy_target_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="对象"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/check_all_target_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:drawableRight="@mipmap/mq_arrow_right"
+                android:gravity="center"
+                android:text="查看全部"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/target_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/check_all_target_tv" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

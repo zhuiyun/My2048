@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Копи рубли 2048</string>
+    <string name="arrow_left">Кнопка листания влево</string>
+    <string name="arrow_right">Кнопка листания вправо</string>
+    <string name="bonus">Бонусы</string>
+    <string name="close_button">Закрыть всплывающее окно</string>
+    <string name="footer_bonus1">Кнопка для бонуса №1</string>
+    <string name="footer_bonus2">Кнопка для бонуса №2</string>
+    <string name="footer_bonus3">Кнопка для бонуса №3</string>
+    <string name="game_over">Игра закончена</string>
+    <string name="header_currency1">Рубли</string>
+    <string name="game_over_hint">В этом направлении\nходов нет</string>
+    <string name="header_currency2">Доллары</string>
+    <string name="header_record">Рекорд</string>
+    <string name="info_button">Кнопка информации</string>
+    <string name="new_game">Новая игра</string>
+    <string name="new_game_button">Кнопка новой игры</string>
+    <string name="preview">Иконка с превью</string>
+    <string name="progress">Уровни</string>
+    <string name="title">Ты накопил</string>
+    <string name="toast_cant_undo">Уже сделанно</string>
+    <string name="toast_cant_use_specials">Не достаточно бонусов</string>
+    <string name="try_again">Закрыть</string>
+</resources>

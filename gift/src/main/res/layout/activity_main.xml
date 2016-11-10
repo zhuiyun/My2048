@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/replace_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e2e2e2" />
+
+    <RadioGroup
+        android:id="@+id/main_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/homepage_rb"
+            android:drawableTop="@drawable/homepage_rb"
+            android:text="首页"
+            style="@style/main_rb" />
+        <RadioButton
+            android:id="@+id/gift_rb"
+            android:drawableTop="@drawable/gift_rb"
+            android:text="榜单"
+            style="@style/main_rb" />
+        <RadioButton
+            android:id="@+id/category_rb"
+            android:drawableTop="@drawable/category_rb"
+            android:text="分类"
+            style="@style/main_rb" />
+        <RadioButton
+            android:id="@+id/profile_rb"
+            android:drawableTop="@drawable/profile_rb"
+            android:text="个人"
+            style="@style/main_rb" />
+    </RadioGroup>
+
+</LinearLayout>

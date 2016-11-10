@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Collect Money 2048</string>
+    <string name="arrow_left">Arrow left</string>
+    <string name="arrow_right">Arrow right</string>
+    <string name="bonus">Bonus</string>
+    <string name="close_button">Close popup window</string>
+    <string name="footer_bonus1">Bonus button #1</string>
+    <string name="footer_bonus2">Bonus button #2</string>
+    <string name="footer_bonus3">Bonus button #3</string>
+    <string name="game_over">Game Over</string>
+    <string name="game_over_hint">No moves at this\ndirection</string>
+    <string name="header_currency1">Rubles</string>
+    <string name="header_currency2">Dollars</string>
+    <string name="header_record">Highscore</string>
+    <string name="info_button">Info button</string>
+    <string name="new_game">New game</string>
+    <string name="new_game_button">New game button</string>
+    <string name="preview">Preview image</string>
+    <string name="progress">Stages</string>
+    <string name="title">You earned</string>
+    <string name="toast_cant_undo">Already done</string>
+    <string name="toast_cant_use_specials">Not enough bonus</string>
+    <string name="try_again">Close</string>
+</resources>

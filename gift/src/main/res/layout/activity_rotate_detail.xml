@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/rotate_detail_wb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ListView
+        android:id="@+id/rotate_detail_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/rotate_detail_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/selection_detail_iv"
+                android:src="@mipmap/ic_action_compact_favourite_normal" />
+
+            <TextView
+                android:id="@+id/rotate_favourite_tv"
+                style="@style/selection_detail_tv" />
+            <View
+                android:layout_width="0.2dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#d6d6d6"/>
+            <ImageView
+                style="@style/selection_detail_iv"
+                android:src="@mipmap/ic_action_compact_share" />
+
+            <TextView
+                android:id="@+id/rotate_share_tv"
+                style="@style/selection_detail_tv" />
+            <View
+                android:layout_width="0.2dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="#d6d6d6"/>
+            <ImageView
+                style="@style/selection_detail_iv"
+                android:src="@mipmap/ic_action_compact_comment" />
+
+            <TextView
+                android:id="@+id/rotate_comment_tv"
+                style="@style/selection_detail_tv" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
