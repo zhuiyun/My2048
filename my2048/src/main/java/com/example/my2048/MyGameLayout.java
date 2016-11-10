@@ -34,8 +34,11 @@ package com.example.my2048;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Point;
 import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -48,6 +51,9 @@ import java.util.List;
  * Created by Administrator on 2016/11/10 0010.
  */
 public class MyGameLayout extends GridLayout {
+    public static final int ADD_SCORE = 001;
+    public static final int EXCHANGE = 002;
+    public static final int AGAIN = 003;
     float startX, startY, endX, endY;//滑动的起始值及终点值
     int width;//每个卡片的宽度
     List<Point> list = new ArrayList<>();//所有空点的集合
@@ -77,6 +83,7 @@ public class MyGameLayout extends GridLayout {
     }
 
     private void initView() {
+        handler = MainActivity.getHandler();
         setBackgroundColor(0xffbbada0);
         for (int i = 0; i < column; i++) {
             for (int j = 0; j < column; j++) {
@@ -156,10 +163,19 @@ public class MyGameLayout extends GridLayout {
                             card[i][z].setNum(0);
                             j--;
                             isMerge = true;
+                            //与主线程通信
+                            Message message = Message.obtain();
+                            message.what = EXCHANGE;
+                            handler.sendMessage(message);
                         } else if (card[i][j].equals(card[i][z])) {
                             card[i][j].setNum(card[i][j].getNum() * 2);
                             card[i][z].setNum(0);
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = ADD_SCORE;
+                            message.arg1 = card[i][j].getNum();
+                            handler.sendMessage(message);
+                            checkWin();
                         }
                         break;
                     }
@@ -168,6 +184,7 @@ public class MyGameLayout extends GridLayout {
         }
         if (isMerge) {
             addGameView();
+            checkFail();
         }
     }
 
@@ -183,10 +200,18 @@ public class MyGameLayout extends GridLayout {
                             card[i][z].setNum(0);
                             j++;
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = EXCHANGE;
+                            handler.sendMessage(message);
                         } else if (card[i][j].equals(card[i][z])) {
                             card[i][j].setNum(card[i][z].getNum() * 2);
                             card[i][z].setNum(0);
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = ADD_SCORE;
+                            message.arg1 = card[i][j].getNum();
+                            handler.sendMessage(message);
+                            checkWin();
                         }
                         break;
                     }
@@ -195,6 +220,7 @@ public class MyGameLayout extends GridLayout {
         }
         if (isMerge) {
             addGameView();
+            checkFail();
         }
     }
 
@@ -210,10 +236,18 @@ public class MyGameLayout extends GridLayout {
                             card[z][i].setNum(0);
                             j--;
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = EXCHANGE;
+                            handler.sendMessage(message);
                         } else if (card[z][i].equals(card[j][i])) {
                             card[j][i].setNum(card[j][i].getNum() * 2);
                             card[z][i].setNum(0);
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = ADD_SCORE;
+                            message.arg1 = card[j][i].getNum();
+                            handler.sendMessage(message);
+                            checkWin();
                         }
                         break;
                     }
@@ -222,6 +256,7 @@ public class MyGameLayout extends GridLayout {
         }
         if (isMerge) {
             addGameView();
+            checkFail();
         }
     }
 
@@ -237,10 +272,18 @@ public class MyGameLayout extends GridLayout {
                             card[z][i].setNum(0);
                             j++;
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = EXCHANGE;
+                            handler.sendMessage(message);
                         } else if (card[j][i].equals(card[z][i])) {
                             card[j][i].setNum(card[z][i].getNum() * 2);
                             card[z][i].setNum(0);
                             isMerge = true;
+                            Message message = Message.obtain();
+                            message.what = ADD_SCORE;
+                            message.arg1 = card[z][i].getNum();
+                            handler.sendMessage(message);
+                            checkWin();
                         }
                         break;
                     }
@@ -249,7 +292,57 @@ public class MyGameLayout extends GridLayout {
         }
         if (isMerge) {
             addGameView();
-        }
+            checkFail();
 
+        }
     }
+
+
+    public boolean checkFail() {
+        boolean isFail = true;
+        for (int i = 0; i < column; i++) {
+            for (int j = 0; j < column; j++) {
+                if ((card[i][j].getNum() == 0)
+                        || i > 0 && card[i][j].equals(card[i - 1][j])
+                        || j > 0 && card[i][j].equals(card[i][j - 1])) {
+                    isFail = false;
+                }
+            }
+        }
+        if (isFail) {
+            AlertDialog dialog = new AlertDialog.Builder(getContext()).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    removeAllViews();
+                    initView();
+                    Message message = new Message();
+                    message.what = AGAIN;
+                    handler.sendMessage(message);
+                }
+            }).setTitle("您已失败,是否重新开始").setCancelable(false).create();
+            dialog.show();
+        }
+        return isFail;
+    }
+
+    public void checkWin() {
+        for (int i = 0; i < column; i++) {
+            for (int j = 0; j < column; j++) {
+                if (card[i][j].getNum() == 2048) {
+                    AlertDialog dialog = new AlertDialog.Builder(getContext())
+                            .setTitle("恭喜你").setPositiveButton("再来一次", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    removeAllViews();
+                                    initView();
+                                }
+                            }).create();
+                    dialog.show();
+                }
+            }
+        }
+    }
+
+
+
 }

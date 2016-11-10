@@ -19,6 +19,8 @@
             android:src="@drawable/logo2048" />
 
         <TextView
+            android:gravity="center"
+            android:textSize="30sp"
             android:id="@+id/nowScore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,6 +29,8 @@
             android:background="@drawable/playscore" />
 
         <TextView
+            android:gravity="center"
+            android:textSize="30sp"
             android:id="@+id/bestScore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
